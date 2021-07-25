@@ -1,5 +1,8 @@
 let cookie_name = "states-checklist";
 let tiles = [["Alabama", "off"], ["Alaska", "off"], ["Arizona", "off"], ["Arkansas", "off"], ["California", "off"], ["Colorado", "off"], ["Connecticut", "off"], ["Delaware", "off"], ["Florida", "off"], ["Georgia", "off"], ["Hawaii", "off"], ["Idaho", "off"], ["Illinois", "off"], ["Indiana", "off"], ["Iowa", "off"], ["Kansas", "off"], ["Kentucky", "off"], ["Louisiana", "off"], ["Maine", "off"], ["Maryland", "off"], ["Massachusetts", "off"], ["Michigan", "off"], ["Minnesota", "off"], ["Mississippi", "off"], ["Missouri", "off"], ["Montana", "off"], ["Nebraska", "off"], ["Nevada", "off"], ["New Hampshire", "off"], ["New Jersey", "off"], ["New Mexico", "off"], ["New York", "off"], ["North Carolina", "off"], ["North Dakota", "off"], ["Ohio", "off"], ["Oklahoma", "off"], ["Oregon", "off"], ["Pennsylvania", "off"], ["Rhode Island", "off"], ["South Carolina", "off"], ["South Dakota", "off"], ["Tennessee", "off"], ["Texas", "off"], ["Utah", "off"], ["Vermont", "off"], ["Virginia", "off"], ["Washington", "off"], ["West Virginia", "off"], ["Wisconsin", "off"], ["Wyoming", "off"]];
+const numTiles = tiles.length;
+const numCols = 3;
+const numRows = Math.ceil(numTiles / numCols);
 
 function getCookie(cname) {
   let name = cname + "=";
@@ -55,10 +58,13 @@ function newBoard() {
 function loadBoard() {
   let html = document.getElementById('card').innerHTML;
 
-  for (let row = 0; row < 10; row++) {
+  for (let row = 0; row < numRows; row++) {
     html += "  <tr>\n";
-    for (let col = 0; col < 5; col++) {
-      html += "    <td id=" + (row * 5 + col) + " class=\"" + tiles[row * 5 + col][1] + "\" onclick=\"clickTile(" + (row * 5 + col) + ")\">" + tiles[row * 5 + col][0] + "</td>\n";
+    for (let col = 0; col < numCols; col++) {
+      if ((row * numCols + col) >= numTiles) {
+        break;
+      }
+      html += "    <td id=" + (row * numCols + col) + " class=\"" + tiles[row * numCols + col][1] + "\" onclick=\"clickTile(" + (row * numCols + col) + ")\">" + tiles[row * numCols + col][0] + "</td>\n";
     }
     html += "  </tr>\n";
   }
