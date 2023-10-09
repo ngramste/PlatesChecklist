@@ -1,6 +1,5 @@
 let cookie_name = "states-checklist";
 let tiles = [["Alabama", "off"], ["Alaska", "off"], ["Arizona", "off"], ["Arkansas", "off"], ["California", "off"], ["Colorado", "off"], ["Connecticut", "off"], ["Delaware", "off"], ["Florida", "off"], ["Georgia", "off"], ["Hawaii", "off"], ["Idaho", "off"], ["Illinois", "off"], ["Indiana", "off"], ["Iowa", "off"], ["Kansas", "off"], ["Kentucky", "off"], ["Louisiana", "off"], ["Maine", "off"], ["Maryland", "off"], ["Massachusetts", "off"], ["Michigan", "off"], ["Minnesota", "off"], ["Mississippi", "off"], ["Missouri", "off"], ["Montana", "off"], ["Nebraska", "off"], ["Nevada", "off"], ["New Hampshire", "off"], ["New Jersey", "off"], ["New Mexico", "off"], ["New York", "off"], ["North Carolina", "off"], ["North Dakota", "off"], ["Ohio", "off"], ["Oklahoma", "off"], ["Oregon", "off"], ["Pennsylvania", "off"], ["Rhode Island", "off"], ["South Carolina", "off"], ["South Dakota", "off"], ["Tennessee", "off"], ["Texas", "off"], ["Utah", "off"], ["Vermont", "off"], ["Virginia", "off"], ["Washington", "off"], ["West Virginia", "off"], ["Wisconsin", "off"], ["Wyoming", "off"]];
-let numTiles = tiles.length + 1;
 let numCols = 3;
 
 function getCookie(cname) {
@@ -30,6 +29,17 @@ function deleteCookie(cname) {
   document.cookie = cname + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 }
 
+function updateScore() {
+  let cookie = getCookie(cookie_name);
+  let score = 0;
+
+  cookie.forEach(element => {
+    score += (element[1] == "on");
+  });
+
+  document.getElementById("usStatesScore").innerHTML = score + "/" + tiles.length;
+}
+
 function clickTile(tile) {
   let value = document.getElementById(tile).attributes.class.value;
 
@@ -45,6 +55,7 @@ function clickTile(tile) {
   }
 
   setCookie(cookie_name, cookie, 1000);
+  updateScore();
 }
 
 function newBoard() {
@@ -55,7 +66,8 @@ function newBoard() {
 }
 
 function loadBoard() {
-  let html = document.getElementById('card').innerHTML;
+  let html = document.getElementById('usStates').innerHTML;
+  let numTiles = tiles.length + 1;
   let numRows = Math.ceil(numTiles / numCols);
 
   for (let row = 0; row < numRows; row++) {
@@ -70,7 +82,8 @@ function loadBoard() {
     html += "  </tr>\n";
   }
 
-  document.getElementById('card').innerHTML = html;
+  document.getElementById('usStates').innerHTML = html;
+  updateScore();
 }
 
 function addCustom() {
@@ -79,7 +92,7 @@ function addCustom() {
     let cookie = getCookie(cookie_name);
     cookie.push([custom, "on"]);
     setCookie(cookie_name, cookie, 1000);
-    document.getElementById('card').innerHTML = "";
+    document.getElementById('usStates').innerHTML = "";
     onLoad();
   }
 }
@@ -88,7 +101,6 @@ function onLoad() {
   let board = getCookie(cookie_name);
   if (board != '') {
     tiles = board;
-    numTiles = tiles.length + 1;
     numCols = 3;
   }
 
