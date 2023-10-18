@@ -12,14 +12,16 @@
   grid-area: new;
   box-shadow: 0.5vw 0.5vw 1vw grey;
   border-radius: 2vw;
+  grid-area: new;
 }
 
-#usStatesProgress
+.progress
 {
+  margin-top: 2vw;
   display: grid;
-  grid-template-columns: auto 5vw;
+  grid-template-columns: 15vw auto 5vw;
   font-size: 2vw;
-  grid-area: usStatesProgress;
+  grid-area: progress;
 }
 
 .hr
@@ -35,34 +37,52 @@
   grid-column-gap: 2vw;
   grid-row-gap: 1vw;
   grid-template-columns: auto;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: auto auto 5vw;
   grid-template-areas:
     'new'
-    'usStatesProgress'
-    'board';
+    'board'
+    'padding';
   margin: auto;
   width: 90vw;
 }
 
-.card
+#board
 {
   grid-area: board;
 }
 
-.card tr
+.group
 {
-  padding: 0px;
-  margin: 0px;
+  display: grid;
+  grid-column-gap: 2vw;
+  grid-row-gap: 1vw;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    'progress'
+    'buttons';
 }
 
-.card td
+.plates
 {
-  width: 18vw;
+  grid-area: buttons;
+  display: grid;
+  grid-column-gap: 1vw;
+  grid-row-gap: 1vw;
+  grid-template-columns: auto auto auto;
+}
+
+.card
+{
+  padding: 2vw !important;
+  margin: 0px;
+  /* width: 18vw; */
   height: 8vw;
   /* border: 0.1vw solid black; */
   box-shadow: 0.5vw 0.5vw 1vw grey;
   border-radius: 2vw;
   text-align: center;
+  align-items: center;
   font-size: 2.25vw;
   padding: 0.5vw;
   overflow: hidden;

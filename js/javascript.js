@@ -1,61 +1,358 @@
 let cookie_name = "states-checklist";
-let tiles = [["Alabama", "off"], ["Alaska", "off"], ["Arizona", "off"], ["Arkansas", "off"], ["California", "off"], ["Colorado", "off"], ["Connecticut", "off"], ["Delaware", "off"], ["Florida", "off"], ["Georgia", "off"], ["Hawaii", "off"], ["Idaho", "off"], ["Illinois", "off"], ["Indiana", "off"], ["Iowa", "off"], ["Kansas", "off"], ["Kentucky", "off"], ["Louisiana", "off"], ["Maine", "off"], ["Maryland", "off"], ["Massachusetts", "off"], ["Michigan", "off"], ["Minnesota", "off"], ["Mississippi", "off"], ["Missouri", "off"], ["Montana", "off"], ["Nebraska", "off"], ["Nevada", "off"], ["New Hampshire", "off"], ["New Jersey", "off"], ["New Mexico", "off"], ["New York", "off"], ["North Carolina", "off"], ["North Dakota", "off"], ["Ohio", "off"], ["Oklahoma", "off"], ["Oregon", "off"], ["Pennsylvania", "off"], ["Rhode Island", "off"], ["South Carolina", "off"], ["South Dakota", "off"], ["Tennessee", "off"], ["Texas", "off"], ["Utah", "off"], ["Vermont", "off"], ["Virginia", "off"], ["Washington", "off"], ["West Virginia", "off"], ["Wisconsin", "off"], ["Wyoming", "off"]];
 let numCols = 3;
 
+let data = {
+  "group": [
+    {
+      "name": "United States",
+      "score": 0,
+      "plates": [
+        {
+          "name": "Alabama",
+          "buttonState": "off"
+        },
+        {
+          "name": "Alaska",
+          "buttonState": "off"
+        },
+        {
+          "name": "Arizona",
+          "buttonState": "off"
+        },
+        {
+          "name": "Arkansas",
+          "buttonState": "off"
+        },
+        {
+          "name": "California",
+          "buttonState": "off"
+        },
+        {
+          "name": "Colorado",
+          "buttonState": "off"
+        },
+        {
+          "name": "Connecticut",
+          "buttonState": "off"
+        },
+        {
+          "name": "Delaware",
+          "buttonState": "off"
+        },
+        {
+          "name": "Florida",
+          "buttonState": "off"
+        },
+        {
+          "name": "Georgia",
+          "buttonState": "off"
+        },
+        {
+          "name": "Hawaii",
+          "buttonState": "off"
+        },
+        {
+          "name": "Idaho",
+          "buttonState": "off"
+        },
+        {
+          "name": "Illinois",
+          "buttonState": "off"
+        },
+        {
+          "name": "Indiana",
+          "buttonState": "off"
+        },
+        {
+          "name": "Iowa",
+          "buttonState": "off"
+        },
+        {
+          "name": "Kansas",
+          "buttonState": "off"
+        },
+        {
+          "name": "Kentucky",
+          "buttonState": "off"
+        },
+        {
+          "name": "Louisiana",
+          "buttonState": "off"
+        },
+        {
+          "name": "Maine",
+          "buttonState": "off"
+        },
+        {
+          "name": "Maryland",
+          "buttonState": "off"
+        },
+        {
+          "name": "Massachusetts",
+          "buttonState": "off"
+        },
+        {
+          "name": "Michigan",
+          "buttonState": "off"
+        },
+        {
+          "name": "Minnesota",
+          "buttonState": "off"
+        },
+        {
+          "name": "Mississippi",
+          "buttonState": "off"
+        },
+        {
+          "name": "Missouri",
+          "buttonState": "off"
+        },
+        {
+          "name": "Montana",
+          "buttonState": "off"
+        },
+        {
+          "name": "Nebraska",
+          "buttonState": "off"
+        },
+        {
+          "name": "Nevada",
+          "buttonState": "off"
+        },
+        {
+          "name": "New Hampshire",
+          "buttonState": "off"
+        },
+        {
+          "name": "New Jersey",
+          "buttonState": "off"
+        },
+        {
+          "name": "New Mexico",
+          "buttonState": "off"
+        },
+        {
+          "name": "New York",
+          "buttonState": "off"
+        },
+        {
+          "name": "North Carolina",
+          "buttonState": "off"
+        },
+        {
+          "name": "North Dakota",
+          "buttonState": "off"
+        },
+        {
+          "name": "Ohio",
+          "buttonState": "off"
+        },
+        {
+          "name": "Oklahoma",
+          "buttonState": "off"
+        },
+        {
+          "name": "Oregon",
+          "buttonState": "off"
+        },
+        {
+          "name": "Pennsylvania",
+          "buttonState": "off"
+        },
+        {
+          "name": "Rhode Island",
+          "buttonState": "off"
+        },
+        {
+          "name": "South Carolina",
+          "buttonState": "off"
+        },
+        {
+          "name": "South Dakota",
+          "buttonState": "off"
+        },
+        {
+          "name": "Tennessee",
+          "buttonState": "off"
+        },
+        {
+          "name": "Texas",
+          "buttonState": "off"
+        },
+        {
+          "name": "Utah",
+          "buttonState": "off"
+        },
+        {
+          "name": "Vermont",
+          "buttonState": "off"
+        },
+        {
+          "name": "Virginia",
+          "buttonState": "off"
+        },
+        {
+          "name": "Washington",
+          "buttonState": "off"
+        },
+        {
+          "name": "West Virginia",
+          "buttonState": "off"
+        },
+        {
+          "name": "Wisconsin",
+          "buttonState": "off"
+        },
+        {
+          "name": "Wyoming",
+          "buttonState": "off"
+        }
+      ]
+    },
+    {
+      "name": "US Territories",
+      "score": 0,
+      "plates": [
+        {
+          "name": "District of Columbia",
+          "buttonState": "off"
+        },
+        {
+          "name": "American Samoa",
+          "buttonState": "off"
+        },
+        {
+          "name": "Guam",
+          "buttonState": "off"
+        },
+        {
+          "name": "Northern Mariana Islands",
+          "buttonState": "off"
+        },
+        {
+          "name": "Puerto Rico",
+          "buttonState": "off"
+        },
+        {
+          "name": "U.S. Virgin Islands",
+          "buttonState": "off"
+        }
+      ]
+    },
+    {
+      "name": "Canada",
+      "score": 0,
+      "plates": [
+        {
+          "name": "Alberta",
+          "buttonState": "off"
+        },
+        {
+          "name": "British Columbia",
+          "buttonState": "off"
+        },
+        {
+          "name": "Manitoba",
+          "buttonState": "off"
+        },
+        {
+          "name": "New Brunswick",
+          "buttonState": "off"
+        },
+        {
+          "name": "Newfoundland and Labrador",
+          "buttonState": "off"
+        },
+        {
+          "name": "Nova Scotia",
+          "buttonState": "off"
+        },
+        {
+          "name": "Ontario",
+          "buttonState": "off"
+        },
+        {
+          "name": "Prince Edward Island",
+          "buttonState": "off"
+        },
+        {
+          "name": "Quebec",
+          "buttonState": "off"
+        },
+        {
+          "name": "Saskatchewan",
+          "buttonState": "off"
+        }
+      ]
+    },
+    {
+      "name": "Other",
+      "score": 0,
+      "plates": [
+        {
+          "name": "+",
+          "buttonState": "off"
+        }
+      ]
+    }
+  ]
+};
+
 function getCookie(cname) {
-  let name = cname + "=";
-  let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(';');
-  for (let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return JSON.parse(c.substring(name.length, c.length));
-    }
+  try {
+    return JSON.parse(localStorage.getItem(cname));
   }
-  return "";
+  catch {
+    return '';
+  }
 }
 
 function setCookie(cname, cvalue, exdays) {
-  const d = new Date();
-  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-  let expires = "expires=" + d.toUTCString();
-  document.cookie = cname + "=" + encodeURIComponent(JSON.stringify(cvalue)) + ";" + expires + ";path=/";
+  localStorage.setItem(cname, JSON.stringify(cvalue));
 }
 
 function deleteCookie(cname) {
-  document.cookie = cname + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  localStorage.setItem(cname, '');
 }
 
 function updateScore() {
   let cookie = getCookie(cookie_name);
-  let score = 0;
 
-  cookie.forEach(element => {
-    score += (element[1] == "on");
+  cookie.group.forEach(group => {
+    group.score = 0;
+    group.plates.forEach(plate => {
+      group.score += (plate.buttonState == "on");
+    });
   });
 
-  document.getElementById("usStatesScore").innerHTML = score + "/" + tiles.length;
+  setCookie(cookie_name, cookie, 1000);
 }
 
-function clickTile(tile) {
-  let value = document.getElementById(tile).attributes.class.value;
+function sortGroups() {
+  data.group.forEach(group => {
+    group.plates.filter(plate => plate.buttonState == 'off').concat(group.plates.filter(plate => plate.buttonState == 'on'));
+  });
+}
 
+function getPlate(group, plate) {
+  return getCookie(cookie_name).group.filter(obj => obj.name === group)[0].plates.filter(obj => obj.name === plate);
+}
+
+function clickTile(group, plate) {
+  let id = group + ":" + plate;
   let cookie = getCookie(cookie_name);
 
-  if (value == "on") {
-    document.getElementById(tile).setAttribute("class", "off");
-    cookie[tile][1] = "off";
+  if (getPlate(group, plate)[0].buttonState == "on") {
+    document.getElementById(id).setAttribute("class", "card off");
+    cookie.group.filter(obj => obj.name === group)[0].plates.filter(obj => obj.name === plate)[0].buttonState = "off";
   }
   else {
-    document.getElementById(tile).setAttribute("class", "on");
-    cookie[tile][1] = "on";
+    document.getElementById(id).setAttribute("class", "card on");
+    cookie.group.filter(obj => obj.name === group)[0].plates.filter(obj => obj.name === plate)[0].buttonState = "on";
   }
 
   setCookie(cookie_name, cookie, 1000);
-  updateScore();
+  displayBoard();
 }
 
 function newBoard() {
@@ -65,47 +362,65 @@ function newBoard() {
   }
 }
 
-function loadBoard() {
-  let html = document.getElementById('usStates').innerHTML;
-  let numTiles = tiles.length + 1;
-  let numRows = Math.ceil(numTiles / numCols);
+function displayBoard() {
+  let html = "";
 
-  for (let row = 0; row < numRows; row++) {
-    html += "  <tr>\n";
-    for (let col = 0; col < numCols; col++) {
-      if ((row * numCols + col) == (numTiles - 1)) {
-        html += "    <td id=" + (row * numCols + col) + " class=\"off\" onclick=\"addCustom()\">+</td>\n";
-        break;
-      }
-      html += "    <td id=" + (row * numCols + col) + " class=\"" + tiles[row * numCols + col][1] + "\" onclick=\"clickTile(" + (row * numCols + col) + ")\">" + tiles[row * numCols + col][0] + "</td>\n";
-    }
-    html += "  </tr>\n";
-  }
-
-  document.getElementById('usStates').innerHTML = html;
   updateScore();
+  let cookie = getCookie(cookie_name);
+
+  cookie.group.forEach(group => {
+    html += "<div class='group'>";
+    html +=   "<div class='progress'>";
+    html +=     "<div class='name'>" + group.name + "</div>";
+    html +=     "<div class='hr'></div>";
+    html +=     "<div class='score'>" + group.score + "/" + (group.plates.length - (group.plates[0].name === '+')) + "</div>";
+    html +=   "</div>";
+
+    html +=   "<div class='plates'>";
+
+    group.plates.forEach(plate => {
+      let id = group.name + ":" + plate.name;
+      if (plate.name === '+') {
+        html += "<div id='" + id + "' class='card " + plate.buttonState + "' onclick=\"addCustom()\">" + plate.name + "</div>";
+      }
+      else {
+        html += "<div id='" + id + "' class='card " + plate.buttonState + "' onclick=\"clickTile('" + group.name + "','" + plate.name + "')\">" + plate.name + "</div>";
+      }
+    });
+
+    html +=   "</div>";
+
+    html += "</div>";
+  });
+
+  document.getElementById('board').innerHTML = html;
+
 }
 
 function addCustom() {
-  let custom = prompt("Add Custom Tile", "");
+  let custom = prompt("Add Custom Plate", "");
   if (custom != null) {
     let cookie = getCookie(cookie_name);
-    cookie.push([custom, "on"]);
+    cookie.group[cookie.group.length - 1].plates.push(
+      {
+        "name": custom,
+        "buttonState": "on"
+      });
+
     setCookie(cookie_name, cookie, 1000);
-    document.getElementById('usStates').innerHTML = "";
     onLoad();
   }
 }
 
 function onLoad() {
   let board = getCookie(cookie_name);
-  if (board != '') {
-    tiles = board;
+  if (board != undefined && board != '') {
+    data = board;
     numCols = 3;
   }
 
-  setCookie(cookie_name, tiles, 1000);
-  loadBoard();
+  setCookie(cookie_name, data, 1000);
+  displayBoard();
 }
 
 document.addEventListener("DOMContentLoaded", function () {
